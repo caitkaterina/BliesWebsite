@@ -1,0 +1,10 @@
+{
+  "description": "Connects African businesses with global suppliers through streamlined procurement and logistics solutions, enhancing efficiency and market access.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
