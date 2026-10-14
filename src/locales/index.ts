@@ -5,9 +5,11 @@ import * as company from './company'
 import * as procurement from './procurement'
 import * as services from './services'
 import * as quote from './quote'
+import * as integration from './integration'
+import * as account from './account'
 
 type Cat = Record<string, string>
-const groups = [chrome, home, company, procurement, services, quote] as { fr: Cat; ar: Cat }[]
+const groups = [chrome, home, company, procurement, services, quote, integration, account] as { fr: Cat; ar: Cat }[]
 
 export const CATALOG: Record<'fr' | 'ar', Cat> = {
   fr: Object.assign({}, ...groups.map((g) => g.fr)),

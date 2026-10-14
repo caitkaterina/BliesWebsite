@@ -1,4 +1,4 @@
-import { defineConfig, type HtmlTagDescriptor, type Plugin } from 'vite'
+import { defineConfig, loadEnv, type HtmlTagDescriptor, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import path from 'node:path'
@@ -8,6 +8,7 @@ import siteConfiguration from './.figma/make/site.json'
 
 // Vite config — https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
+  const backendTarget = loadEnv(mode, process.cwd(), '').BLIES_BACKEND_URL || process.env.BLIES_BACKEND_URL
   // .figma/make/deploy-preview passes `--mode development` for cached-preview builds.
   const emitSourcemaps = mode === 'development'
 
@@ -31,6 +32,7 @@ react(),
       },
     },
     server: {
+      proxy: backendTarget ? { '^/api/(contact|quotes|tracking|health|customer(?:/|$))': { target: backendTarget, changeOrigin: true } } : undefined,
       host: process.env.FIGMA_DEV_SERVER_HOST || '0.0.0.0',
       port: parseInt(process.env.PORT || '8443'),
       strictPort: true,

@@ -392,6 +392,7 @@ const FOOT_LINKS = {
     ['/industries', 'Industries'],
     ['/tracking', 'Track a shipment'],
     ['/contact', 'Contact & locations'],
+    ['/account', 'My BLIES account'],
   ],
   legal: [
     ['/legal/privacy', 'Privacy'],

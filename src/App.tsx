@@ -8,6 +8,7 @@ import { CategoryDetail, ProcurementCategories, ProcurementOverview, SourcingMar
 import { About, GlobalNetwork, OurFuture, IndustriesIndex, Legal, LogisticsOverview, NotFound } from './pages/Company'
 import Contact, { Track } from './pages/Contact'
 import Quote from './pages/Quote'
+import Account from './pages/Account'
 import { byPath } from './content/services'
 
 function Page({ path }: { path: string }) {
@@ -28,6 +29,7 @@ function Page({ path }: { path: string }) {
     case '/tracking': return <Track />
     case '/quote': return <Quote key={window.location.hash} />
     case '/contact': return <Contact />
+    case '/account': return <Account />
     default: return <NotFound />
   }
 }
